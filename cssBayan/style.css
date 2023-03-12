@@ -81,6 +81,9 @@ p {
 .accordion .accordion__content label:active {
   color: blue;
 }
+.accordion .accordion__content label:active .content__image {
+  filter: grayscale(50%);
+}
 
 .accordion__content .fa-times {
   display: none;
