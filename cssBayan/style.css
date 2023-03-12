@@ -1,8 +1,11 @@
-body {
-  font-size: 18px;
+html {
+  font: 18px "Arial", sans-serif;
 }
 p {
-  font-size: 1rem;
+  font-size: 1.3rem;
+  padding: 0.4rem 0rem;
+  margin: 0rem;
+  font-weight: bold;
 }
 .container {
   flex-direction: column;
@@ -13,22 +16,18 @@ p {
   margin: 0 auto;
 }
 
-.accordion p {
-  padding: 0.4rem 0rem;
-  margin: 0rem;
+.accordion {
+  padding: 1rem;
+  width: 100%;
 }
-img {
+
+.accordion img {
   height: 15rem;
-  max-width: calc(100vw - 2rem);
+  max-width: calc(100vw - 1.5rem);
 }
 
 .content__image {
   scale: 0.8;
-}
-
-.accordion {
-  padding: 1rem;
-  width: 100%;
 }
 
 .accordion label {
@@ -36,15 +35,11 @@ img {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  color: blue;
-  border-top: 2px solid rgb(178, 176, 176);
+  color: rgb(92, 92, 221);
+  border-top: 2px solid rgb(192, 189, 189);
   padding: 1rem 0rem;
   width: 100%;
-  font-weight: bold;
   box-sizing: border-box;
-  z-index: 100;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
   transition: color 0.35s;
 }
 
@@ -90,18 +85,24 @@ img {
 .accordion__content .fa-times {
   display: none;
 }
-
-.accordion input:checked + label .fa-times {
-  display: block;
-}
-
-.accordion input:checked + label .fa-plus {
+.accordion__content .fa-plus {
   display: none;
 }
 
 @media (hover: hover) {
   .accordion__content:hover .fa-times {
     display: block;
+  }
+  .accordion:hover .fa-plus {
+    display: block;
+  }
+
+  .accordion:hover input:checked + label .fa-times {
+    display: block;
+  }
+
+  .accordion:hover input:checked + label .fa-plus {
+    display: none;
   }
 
   .accordion__content:hover .fa-plus {
@@ -122,9 +123,21 @@ img {
   }
 }
 
+@media (hover: none) {
+  .accordion__content .fa-plus {
+    display: block;
+  }
+  .accordion input:checked + label .fa-times {
+    display: block;
+  }
+  .accordion input:checked + label .fa-plus {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 820px) {
-  body {
-    font-size: 14px;
+  html {
+    font: 14px "Arial", sans-serif;
   }
   .container {
     padding: 1.5rem;
@@ -132,8 +145,8 @@ img {
 }
 
 @media screen and (max-width: 480px) {
-  body {
-    font-size: 12px;
+  html {
+    font: 12px "Arial", sans-serif;
   }
   .container {
     padding: 0.5rem;
