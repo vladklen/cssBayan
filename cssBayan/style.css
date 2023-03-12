@@ -1,3 +1,63 @@
-h1 {
-  color: red;
+.container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion label {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border-top: 2px solid rgb(178, 176, 176);
+  padding: 15px 0px;
+  width: 100%;
+  font-weight: bold;
+  box-sizing: border-box;
+  z-index: 100;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  margin: 0 0 5px;
+  transition: color 0.35s;
+}
+.accordion .accordion__content {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  height: 0;
+  color: rgba(0, 0, 0, 0);
+  line-height: 18px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  transition: color 0.5s, padding 0.5s;
+  overflow: hidden;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.accordion label::after {
+  content: "\f00d";
+  font-family: "Font Awesome 5 Free";
+  transform: rotate(45deg);
+  transition: 0.2s;
+  font-weight: 900;
+}
+.accordion label:hover {
+  /* color: #fff; */
+}
+.accordion input {
+  display: none;
+}
+
+.accordion input:checked + label + .accordion__content {
+  height: auto;
+  color: #000;
+  transition: 0.5s;
+  /* padding: 20px 30px 10px; */
+}
+
+.accordion input:checked + label::after {
+  content: "\f00d";
+  transform: rotate(0deg);
+  font-family: "Font Awesome 5 Free";
 }
