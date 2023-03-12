@@ -5,10 +5,28 @@
   align-items: center;
 }
 
+.accordion p {
+  padding: 5px 0px;
+  margin: 0px;
+}
+img {
+  height: 200px;
+}
+
+.content__image {
+  scale: 0.8;
+}
+
+.accordion {
+  padding: 20px;
+}
+
 .accordion label {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
+  color: blue;
   border-top: 2px solid rgb(178, 176, 176);
   padding: 15px 0px;
   width: 100%;
@@ -17,10 +35,16 @@
   z-index: 100;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 18px;
-  margin: 0 0 5px;
   transition: color 0.35s;
 }
-.accordion .accordion__content {
+
+.content__title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.accordion .content__image {
   width: calc(100% - 40px);
   margin: 0 auto;
   height: 0;
@@ -35,29 +59,47 @@
   transition: 0.5s;
 }
 
-.accordion label::after {
-  content: "\f00d";
-  font-family: "Font Awesome 5 Free";
-  transform: rotate(45deg);
-  transition: 0.2s;
-  font-weight: 900;
-}
-.accordion label:hover {
-  /* color: #fff; */
-}
 .accordion input {
   display: none;
 }
 
-.accordion input:checked + label + .accordion__content {
-  height: auto;
-  color: #000;
-  transition: 0.5s;
-  /* padding: 20px 30px 10px; */
+.content__image:hover {
+  cursor: pointer;
+}
+.accordion:hover label,
+.accordion input:checked + label {
+  color: black;
 }
 
-.accordion input:checked + label::after {
-  content: "\f00d";
-  transform: rotate(0deg);
-  font-family: "Font Awesome 5 Free";
+.accordion input:hover + label > .content__image,
+.accordion .content__image:hover,
+.accordion input:checked + label > .content__image {
+  height: auto;
+  color: #000;
+  scale: 1;
+  transition: 0.5s;
+}
+
+.accordion .accordion__content label:active {
+  color: blue;
+}
+
+.accordion__content .fa-times {
+  display: none;
+}
+
+.accordion__content:hover .fa-times {
+  display: block;
+}
+
+.accordion__content:hover .fa-plus {
+  display: none;
+}
+
+.accordion input:checked + label .fa-times {
+  display: block;
+}
+
+.accordion input:checked + label .fa-plus {
+  display: none;
 }
