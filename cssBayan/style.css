@@ -1,5 +1,5 @@
 html {
-  font: 18px "Arial", sans-serif;
+  font: 1.2em "Arial", sans-serif;
 }
 p {
   font-size: 1.3rem;
@@ -140,7 +140,7 @@ p {
 
 @media screen and (max-width: 820px) {
   html {
-    font: 14px "Arial", sans-serif;
+    font: 0.9em "Arial", sans-serif;
   }
   .container {
     padding: 1.5rem;
@@ -149,7 +149,7 @@ p {
 
 @media screen and (max-width: 480px) {
   html {
-    font: 12px "Arial", sans-serif;
+    font: 0.7em "Arial", sans-serif;
   }
   .container {
     padding: 0.5rem;
